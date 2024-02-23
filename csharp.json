@@ -1,0 +1,177 @@
+{
+	"Generate Console.WriteLine": {
+		"prefix": "jcwl",
+		"body": [
+			"Console.WriteLine();"
+		],
+		"description": "print to console with line"
+	},"Generate Console.Write": {
+		"prefix": "jcw",
+		"body": [
+			"Console.Write();"
+		],
+		"description": "print to console"
+	},"Generate Console.ReadLine": {
+		"prefix": "jcrl",
+		"body": [
+			"Console.ReadLine();"
+		],
+		"description": "console input"
+	},
+	"Generate namespace": {
+		"prefix": "jname",
+		"body": [
+			"namespace MyApp",
+			"{",
+			"}"
+		],
+		"description": "generate namespace"
+	},
+	"Generate class": {
+		"prefix": "jclass",
+		"body": [
+			"internal class Program",
+			"{",
+			"}"
+		],
+		"description": "generate class"
+	},
+	"Generate main method": {
+		"prefix": "jmain",
+		"body": [
+			"static void Main(string[] args)",
+			"{",
+			"}"
+		],
+		"description": "generate main method"
+	},
+	"Generate if statement": {
+		"prefix": "jif",
+		"body": [
+			"if(condition)",
+			"{",
+			"}"
+		],
+		"description": "generate if statement"
+	},
+	"Generate else if statement": {
+		"prefix": "jelseif",
+		"body": [
+			"else if(condition)",
+			"{",
+			"}"
+		],
+		"description": "generate else if statement"
+	},
+	"Generate else statement": {
+		"prefix": "jelse",
+		"body": [
+			"else",
+			"{",
+			"}"
+		],
+		"description": "generate else statement"
+	},
+	"Generate switch case statement": {
+		"prefix": "jswitchcase",
+		"body": [
+			"switch(expression){",
+            "   case label:",
+            "       break;",
+            "   default:",
+            "       break;",
+            "}"
+		],
+		"description": "generate switch case statement"
+	},
+	"Generate for loop statement": {
+		"prefix": "jfor",
+		"body": [
+			"for(initialization; condition; update)",
+			"{",
+			"}"
+		],
+		"description": "generate for loop statement"
+	},
+	"Generate foreach loop statement": {
+		"prefix": "jforeach",
+		"body": [
+			"foreach(expression)",
+			"{",
+			"}"
+		],
+		"description": "generate foreach loop statement"
+	},
+	"Generate while loop statement": {
+		"prefix": "jwhile",
+		"body": [
+			"while(condition)",
+			"{",
+			"}"
+		],
+		"description": "generate while loop statement"
+	},
+	"Generate do while loop statement": {
+		"prefix": "jdo",
+		"body": [
+			"do",
+			"{",
+			"}while(condition);"
+		],
+		"description": "generate do while loop statement"
+	},
+	"Generate try catch block statement": {
+		"prefix": "jtry",
+		"body": [
+			"try{",
+			"}catch(Exception ex){",
+			"    Console.Write(ex.StackTrace);",
+			"}"
+		],
+		"description": "generate try catch block statement"
+	},
+	"Generate hello world program": {
+		"prefix": "wHelloWorld",
+		"body": [
+			"namespace MyApp",
+			"{",
+			"    internal class Program",
+			"    {",
+			"        static void Main(string[] args)",
+			"        {",
+			"            Console.WriteLine(\"Hello World!\");",
+			"        }",
+			"    }",
+			"}//Author: Josuan"
+		],
+		"description": "generate hello world program"
+	},
+	"Generate ternary operator": {
+		"prefix": "jter",
+		"body": [
+			"bool varName = condition ? expression1 : expression2;"
+		],
+		"description": "generate ternary operator"
+	},
+	"Generate simple even odd program": {
+		"prefix": "wEvenOdd",
+		"body": [
+			"namespace MyApp",
+			"{",
+			"    internal class Program",
+			"    {",
+			"        static void Main(string[] args)",
+			"        {",
+			"            int num = 20;",
+			"            if(num % 2 == 0){",
+			"                Console.WriteLine(\"The number {0} is even\",num);",
+			"            }else{",
+			"                Console.WriteLine(\"The number {0} is odd\",num);",
+			"            }",
+			"        }",
+			"    }",
+			"}"
+		],
+		"description": "generate simple even odd program"
+	}
+}

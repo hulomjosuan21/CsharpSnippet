@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Code Snippets by Josuan</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="author" content="Josuan">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        header img {
+            max-width: 100px;
+            margin-bottom: 5px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        /* Snippet Styles */
+        .snippet-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .snippet {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .snippet h2 {
+            margin-top: 0;
+        }
+
+        .snippet pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .snippet p {
+            margin: 10px 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .snippet-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="favicon.png" alt="Your Logo">
+            <h1>Code Snippets by Josuan</h1>
+        </header>
+
+        <main>
+            <div class="snippet-container">
+                <!-- Code snippets will be displayed here -->
+            </div>
+            <a href="csharp.json" class="download-btn" download="csharp.json">Download JSON Data</a>
+        </main>
+
+        <footer>
+            &copy; 2024 Code Snippets by Josuan. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch and display snippets
+            fetch('csharp.json')
+                .then(response => response.json())
+                .then(data => {
+                    const snippetContainer = document.querySelector('.snippet-container');
+                    for (const snippetName in data) {
+                        if (data.hasOwnProperty(snippetName)) {
+                            const snippet = data[snippetName];
+                            const snippetHTML = `
+                                <div class="snippet">
+                                    <h2>${snippetName}</h2>
+                                    <p><strong>Title:</strong> ${snippetName}</p>
+                                    <p><strong>Prefix:</strong> ${snippet.prefix} + tab key</p>
+                                    <p><strong>Code:</strong></p>
+                                    <pre>${snippet.body.join('\n')}</pre>
+                                    <p><strong>Description:</strong> ${snippet.description}</p>
+                                </div>
+                            `;
+                            snippetContainer.innerHTML += snippetHTML;
+                        }
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
